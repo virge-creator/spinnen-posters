@@ -42,23 +42,29 @@ const posters = [
 
 <Layout title="Home">
   <!-- Hero -->
-  <section class="min-h-[80vh] bg-web-pattern flex items-center">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+  <section class="min-h-[85vh] sm:min-h-[80vh] bg-web-pattern flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
       <div class="max-w-3xl">
-        <p class="text-purple-400 font-medium tracking-widest uppercase mb-4">🕸️ Welkom bij</p>
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-3 sm:mb-4 text-sm sm:text-base">🕸️ Welkom bij</p>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 leading-tight">
           Spinnen<br />
           <span class="text-purple-500">Posters</span>
         </h1>
-        <p class="text-xl text-gray-400 mb-8 max-w-xl">
+        <p class="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8 leading-relaxed">
           Ontdek de fascinerende wereld van spinnen door prachtige, hoogwaardige posters. 
-          Van de majestueuze wielwebspin tot de nieuwsgierige springende spin.
+          Van de majestueuze wielwebspin tot de nieuwsgierige springende spin — breng de 
+          schoonheid van deze achtpotige wezens in je huis.
         </p>
-        <div class="flex gap-4">
-          <a href="/spinnen-posters/posters/" class="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 font-semibold transition-colors">
+        <p class="text-base text-gray-500 mb-6 sm:mb-8 leading-relaxed">
+          Spinnen zijn al meer dan 400 miljoen jaar onze planeetgenoten. Ze bouwen architectonische 
+          meesterwerken, produceren het sterkste natuurlijke materiaal ter wereld, en houden 
+          insectenpopulaties in toom. Het is tijd om deze onbegrepen helden te waarderen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="/spinnen-posters/posters/" class="bg-purple-600 hover:bg-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-colors text-center">
             Bekijk Posters
           </a>
-          <a href="/spinnen-posters/nieuws/" class="border border-gray-600 hover:border-white text-white px-8 py-4 font-semibold transition-colors">
+          <a href="/spinnen-posters/nieuws/" class="border border-gray-600 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-colors text-center">
             Spinnen Nieuws
           </a>
         </div>
@@ -66,77 +72,162 @@ const posters = [
     </div>
   </section>
 
+  <!-- Intro Section -->
+  <section class="py-12 sm:py-16 bg-gray-950 border-y border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Waarom spinnen?</h2>
+        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-4">
+          Spinnen zijn misschien wel de meest onderschatte dieren ter wereld. Terwijl velen ze vrezen, 
+          zijn ze in werkelijkheid <strong class="text-white">essentieel voor ons ecosysteem</strong>. 
+          Ze eten jaarlijks 400-800 miljoen ton insecten — meer dan het gewicht van alle mensen op aarde.
+        </p>
+        <p class="text-gray-400 text-base sm:text-lg leading-relaxed">
+          Hun zijde is <strong class="text-white">vijf keer sterker dan staal</strong>, hun ogen kunnen 
+          kleuren zien die wij niet waarnemen, en sommige soorten kunnen tot 50 keer hun lichaamslengte springen. 
+          Het is tijd om deze wonderlijke wezens in een nieuw licht te zien.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Featured Posters -->
-  <section class="py-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-12">
-        <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Collectie</p>
-        <h2 class="text-4xl font-bold">Uitgelichte Posters</h2>
+  <section class="py-12 sm:py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-8 sm:mb-12">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-2 text-sm">Collectie</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Uitgelichte Posters</h2>
+        <p class="text-gray-400 max-w-2xl">
+          Elke poster is zorgvuldig samengesteld om de unieke schoonheid en het karakter van de spin 
+          vast te leggen. Perfect voor thuis, kantoor, of als cadeau voor de natuurliefhebber.
+        </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
         {posters.slice(0, 3).map(poster => (
-          <a href={`/posters/${poster.id}/`} class="poster-card group">
-            <div class="aspect-[2/3] bg-gray-800 overflow-hidden">
+          <a href={`/spinnen-posters/posters/${poster.id}/`} class="poster-card group">
+            <div class="aspect-[2/3] bg-gray-800 overflow-hidden rounded-t-lg">
               <img 
                 src={poster.image} 
                 alt={poster.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
             </div>
-            <div class="p-4 bg-gray-800/50">
-              <h3 class="text-xl font-bold">{poster.title}</h3>
+            <div class="p-4 sm:p-5 bg-gray-800/50 rounded-b-lg">
+              <h3 class="text-lg sm:text-xl font-bold">{poster.title}</h3>
               <p class="text-purple-400 text-sm italic">{poster.subtitle}</p>
-              <p class="text-gray-400 mt-2">{poster.description}</p>
+              <p class="text-gray-400 mt-2 text-sm sm:text-base">{poster.description}</p>
             </div>
           </a>
         ))}
       </div>
       
-      <div class="text-center mt-12">
+      <div class="text-center mt-8 sm:mt-12">
         <a href="/spinnen-posters/posters/" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium">
-          Bekijk alle posters →
+          Bekijk alle 5 posters →
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Fun Facts -->
+  <section class="py-12 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mb-8 sm:mb-12 text-center">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-2 text-sm">Wist je dat...</p>
+        <h2 class="text-3xl sm:text-4xl font-bold">Fascinerende Feiten</h2>
+      </div>
+      
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+          <p class="text-3xl sm:text-4xl font-black text-purple-500">45.000+</p>
+          <p class="text-gray-400 mt-2 text-sm sm:text-base">Spinnensoorten</p>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">En er worden er nog steeds nieuwe ontdekt</p>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+          <p class="text-3xl sm:text-4xl font-black text-purple-500">400M</p>
+          <p class="text-gray-400 mt-2 text-sm sm:text-base">Jaar evolutie</p>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">Ouder dan de dinosauriërs</p>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+          <p class="text-3xl sm:text-4xl font-black text-purple-500">8</p>
+          <p class="text-gray-400 mt-2 text-sm sm:text-base">Poten altijd</p>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">En vaak 8 ogen erbij</p>
+        </div>
+        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+          <p class="text-3xl sm:text-4xl font-black text-purple-500">5x</p>
+          <p class="text-gray-400 mt-2 text-sm sm:text-base">Sterker dan staal</p>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">Spinnenzijde per gewicht</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <section class="py-12 sm:py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
         <div>
-          <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Over Ons</p>
-          <h2 class="text-4xl font-bold mb-6">Waarom Spinnen?</h2>
-          <p class="text-gray-400 text-lg leading-relaxed mb-6">
-            Spinnen zijn misschien wel de meest onderschatte kunstenaars van de natuur. 
-            Hun webben zijn architectonische meesterwerken, hun ogen zijn poorten naar 
-            een andere wereld, en hun diversiteit is adembenemend.
+          <p class="text-purple-400 font-medium tracking-widest uppercase mb-2 text-sm">Over Ons</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Onze Missie</h2>
+          <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+            Spinnen Posters is geboren uit een passie voor deze onbegrepen wezens. We willen 
+            de perceptie van spinnen veranderen — van angstaanjagend naar fascinerend.
           </p>
-          <p class="text-gray-400 text-lg leading-relaxed">
-            Wij brengen deze prachtige wezens tot leven in hoogwaardige posters die 
-            perfect zijn voor thuis, kantoor, of als cadeau voor de natuurliefhebber.
+          <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+            Onze posters tonen spinnen zoals ze werkelijk zijn: <strong class="text-white">prachtige 
+            architecten, geduldige jagers, en onmisbare schakels</strong> in het web van het leven. 
+            Elk exemplaar is ontworpen om gesprekken te starten en nieuwsgierigheid te wekken.
+          </p>
+          <p class="text-gray-400 text-base sm:text-lg leading-relaxed">
+            Of je nu al fan bent of nog moet worden overtuigd — onze collectie laat je spinnen 
+            in een compleet nieuw licht zien.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <p class="text-4xl font-black text-purple-500">45.000+</p>
-            <p class="text-gray-400 mt-2">Spinnensoorten</p>
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+            <p class="text-2xl sm:text-3xl mb-2">🖼️</p>
+            <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Hoge Kwaliteit</h3>
+            <p class="text-gray-400 text-xs sm:text-sm">Premium prints voor aan de muur</p>
           </div>
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <p class="text-4xl font-black text-purple-500">400M</p>
-            <p class="text-gray-400 mt-2">Jaar evolutie</p>
+          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+            <p class="text-2xl sm:text-3xl mb-2">🎨</p>
+            <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Unieke Designs</h3>
+            <p class="text-gray-400 text-xs sm:text-sm">Originele kunstwerken</p>
           </div>
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <p class="text-4xl font-black text-purple-500">8</p>
-            <p class="text-gray-400 mt-2">Poten altijd</p>
+          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+            <p class="text-2xl sm:text-3xl mb-2">📚</p>
+            <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Educatief</h3>
+            <p class="text-gray-400 text-xs sm:text-sm">Leer over elke soort</p>
           </div>
-          <div class="bg-gray-800 p-6 rounded-lg text-center">
-            <p class="text-4xl font-black text-purple-500">∞</p>
-            <p class="text-gray-400 mt-2">Fascinatie</p>
+          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+            <p class="text-2xl sm:text-3xl mb-2">🌍</p>
+            <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Nederlands</h3>
+            <p class="text-gray-400 text-xs sm:text-sm">Content in je eigen taal</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 sm:py-20 bg-purple-900/30 border-y border-purple-500/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">
+        Klaar om spinnen te<br class="sm:hidden" /> herontdekken?
+      </h2>
+      <p class="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto">
+        Bekijk onze collectie en vind de perfecte poster voor jouw ruimte. 
+        Van subtiele schoonheid tot gedurfde statements.
+      </p>
+      <a 
+        href="/spinnen-posters/posters/" 
+        class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold transition-colors"
+      >
+        Ontdek de Collectie
+        <span>→</span>
+      </a>
     </div>
   </section>
 </Layout>
