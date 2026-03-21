@@ -48,7 +48,7 @@ const posters = [
         <p class="text-purple-400 font-medium tracking-widest uppercase mb-3 sm:mb-4 text-sm sm:text-base">🕸️ Welkom bij</p>
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 leading-tight">
           Spinnen<br />
-          <span class="text-purple-500">Posters</span>
+          <span class="text-purple-500 text-glow">Posters</span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8 leading-relaxed">
           Ontdek de fascinerende wereld van spinnen door prachtige, hoogwaardige posters. 
@@ -61,7 +61,7 @@ const posters = [
           insectenpopulaties in toom. Het is tijd om deze onbegrepen helden te waarderen.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="/spinnen-posters/posters/" class="bg-purple-600 hover:bg-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-colors text-center">
+          <a href="/spinnen-posters/posters/" class="btn-glow text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-center rounded-lg">
             Bekijk Posters
           </a>
           <a href="/spinnen-posters/nieuws/" class="border border-gray-600 hover:border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-colors text-center">
@@ -73,7 +73,7 @@ const posters = [
   </section>
 
   <!-- Intro Section -->
-  <section class="py-12 sm:py-16 bg-gray-950 border-y border-gray-800">
+  <section class="py-12 sm:py-16 section-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Waarom spinnen?</h2>
@@ -92,7 +92,7 @@ const posters = [
   </section>
 
   <!-- Featured Posters -->
-  <section class="py-12 sm:py-20 bg-gray-900">
+  <section class="py-12 sm:py-20 section-accent">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="mb-8 sm:mb-12">
         <p class="text-purple-400 font-medium tracking-widest uppercase mb-2 text-sm">Collectie</p>
@@ -140,22 +140,22 @@ const posters = [
       </div>
       
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+        <div class="stat-card">
           <p class="text-3xl sm:text-4xl font-black text-purple-500">45.000+</p>
           <p class="text-gray-400 mt-2 text-sm sm:text-base">Spinnensoorten</p>
           <p class="text-gray-500 text-xs sm:text-sm mt-1">En er worden er nog steeds nieuwe ontdekt</p>
         </div>
-        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+        <div class="stat-card">
           <p class="text-3xl sm:text-4xl font-black text-purple-500">400M</p>
           <p class="text-gray-400 mt-2 text-sm sm:text-base">Jaar evolutie</p>
           <p class="text-gray-500 text-xs sm:text-sm mt-1">Ouder dan de dinosauriërs</p>
         </div>
-        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+        <div class="stat-card">
           <p class="text-3xl sm:text-4xl font-black text-purple-500">8</p>
           <p class="text-gray-400 mt-2 text-sm sm:text-base">Poten altijd</p>
           <p class="text-gray-500 text-xs sm:text-sm mt-1">En vaak 8 ogen erbij</p>
         </div>
-        <div class="bg-gray-800 p-4 sm:p-6 rounded-lg text-center">
+        <div class="stat-card">
           <p class="text-3xl sm:text-4xl font-black text-purple-500">5x</p>
           <p class="text-gray-400 mt-2 text-sm sm:text-base">Sterker dan staal</p>
           <p class="text-gray-500 text-xs sm:text-sm mt-1">Spinnenzijde per gewicht</p>
@@ -165,7 +165,7 @@ const posters = [
   </section>
 
   <!-- About Section -->
-  <section class="py-12 sm:py-20 bg-gray-900">
+  <section class="py-12 sm:py-20 section-dark">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
         <div>
@@ -186,22 +186,22 @@ const posters = [
           </p>
         </div>
         <div class="grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+          <div class="stat-card">
             <p class="text-2xl sm:text-3xl mb-2">🖼️</p>
             <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Hoge Kwaliteit</h3>
             <p class="text-gray-400 text-xs sm:text-sm">Premium prints voor aan de muur</p>
           </div>
-          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+          <div class="stat-card">
             <p class="text-2xl sm:text-3xl mb-2">🎨</p>
             <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Unieke Designs</h3>
             <p class="text-gray-400 text-xs sm:text-sm">Originele kunstwerken</p>
           </div>
-          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+          <div class="stat-card">
             <p class="text-2xl sm:text-3xl mb-2">📚</p>
             <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Educatief</h3>
             <p class="text-gray-400 text-xs sm:text-sm">Leer over elke soort</p>
           </div>
-          <div class="bg-gray-800 p-4 sm:p-6 rounded-lg">
+          <div class="stat-card">
             <p class="text-2xl sm:text-3xl mb-2">🌍</p>
             <h3 class="font-bold text-white mb-1 text-sm sm:text-base">Nederlands</h3>
             <p class="text-gray-400 text-xs sm:text-sm">Content in je eigen taal</p>
@@ -212,7 +212,7 @@ const posters = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-12 sm:py-20 bg-purple-900/30 border-y border-purple-500/20">
+  <section class="py-12 sm:py-20 section-accent">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">
         Klaar om spinnen te<br class="sm:hidden" /> herontdekken?
@@ -223,7 +223,7 @@ const posters = [
       </p>
       <a 
         href="/spinnen-posters/posters/" 
-        class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold transition-colors"
+        class="btn-glow inline-flex items-center gap-2 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold rounded-lg"
       >
         Ontdek de Collectie
         <span>→</span>
