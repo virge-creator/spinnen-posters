@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  {
+    slug: '2026-03-lentespinnen',
+    title: 'De lente is begonnen: spinnen worden weer actief',
+    description: 'Met de eerste warme dagen ontwaken de spinnen uit hun winterslaap.',
+    date: '2026-03-15'
+  },
+  {
+    slug: '2026-02-spinnen-architectuur',
+    title: 'Architecten leren van spinnenwebben',
+    description: 'Hoe spinnenwebben de toekomst van duurzaam bouwen inspireren.',
+    date: '2026-02-18'
+  },
+  {
+    slug: '2026-01-spinnentellingen',
+    title: 'Doe mee aan de Grote Spinnentelling',
+    description: 'Citizen science project roept Nederlanders op om spinnen te tellen.',
+    date: '2026-01-20'
+  },
+  {
+    slug: '2025-12-cadeautips-spinnenliefhebbers',
+    title: 'Cadeautips voor spinnenliefhebbers',
+    description: 'Van vogelspinnen tot kunstprints: de beste cadeaus.',
+    date: '2025-12-10'
+  },
+  {
+    slug: '2025-11-spinnen-overleven-winter',
+    title: 'Hoe spinnen de winter overleven',
+    description: 'Van antivries tot ondergrondse schuilplaatsen.',
+    date: '2025-11-15'
+  },
+  {
+    slug: '2025-10-halloween-spinnen',
+    title: 'De waarheid achter Halloween-spinnen',
+    description: 'Waarom spinnen zo prominent zijn in Halloween-tradities.',
+    date: '2025-10-28'
+  },
+  {
+    slug: '2025-09-kruisspin-seizoen',
+    title: 'Het kruisspinseizoen is begonnen',
+    description: 'Tips voor het spotten en fotograferen van kruisspinnen.',
+    date: '2025-09-12'
+  },
+  {
+    slug: '2025-08-spinnen-in-de-ruimte',
+    title: 'Spinnen bouwen perfecte webben in de ruimte',
+    description: 'ISS-experiment toont aanpassingsvermogen van spinnen.',
+    date: '2025-08-08'
+  },
+  {
+    slug: '2025-07-grootste-spinnenweb-ooit',
+    title: 'Grootste spinnenweb ooit gevonden in Madagaskar',
+    description: 'Een web van 25 meter breed over een rivier.',
+    date: '2025-07-14'
+  },
+  {
+    slug: '2025-06-spinnenfobie-behandeling',
+    title: 'VR-therapie helpt bij spinnenfobie',
+    description: 'Nieuwe behandeling effectiever dan traditionele therapie.',
+    date: '2025-06-22'
+  },
+  {
+    slug: '2025-05-spinnen-helpen-bij-plaagbestrijding',
+    title: 'Boeren zetten spinnen in tegen plagen',
+    description: 'Experimenten met spinnen als natuurlijke plaagbestrijders.',
+    date: '2025-05-18'
+  },
+  {
+    slug: '2025-04-spinnenzijde-medische-doorbraak',
+    title: 'Spinnenzijde revolutioneert de medische wereld',
+    description: 'Synthetische spinnenzijde voor chirurgische toepassingen.',
+    date: '2025-04-20'
+  },
+  {
+    slug: '2025-03-ontdekking-nieuwe-springende-spin',
+    title: 'Nieuwe springende spin ontdekt in Australië',
+    description: 'Spectaculaire nieuwe soort in Queensland regenwoud.',
+    date: '2025-03-15'
+  }
+];
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('nl-NL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+---
+
+<Layout title="Nieuws" description="Het laatste nieuws over spinnen, onderzoek en ontdekkingen">
+  <section class="py-20 bg-web-pattern min-h-screen">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Nieuws</p>
+        <h1 class="text-5xl font-black mb-4">Spinnen Nieuws</h1>
+        <p class="text-gray-400 text-xl">
+          Het laatste nieuws over spinnen, wetenschappelijk onderzoek en fascinerende ontdekkingen.
+        </p>
+      </div>
+      
+      <div class="space-y-8">
+        {articles.map(article => (
+          <a 
+            href={`/nieuws/${article.slug}/`} 
+            class="block bg-gray-900/50 hover:bg-gray-900 border border-gray-800 hover:border-purple-500/50 rounded-lg p-6 transition-all duration-300 group"
+          >
+            <p class="text-purple-400 text-sm mb-2">{formatDate(article.date)}</p>
+            <h2 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
+              {article.title}
+            </h2>
+            <p class="text-gray-400">{article.description}</p>
+            <div class="mt-4 flex items-center gap-2 text-purple-400 group-hover:text-purple-300">
+              <span class="text-sm font-medium">Lees meer</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posters = [
+  {
+    id: 'gouden-wielwebspin',
+    title: 'Gouden Wielwebspin',
+    subtitle: 'Nephila clavipes',
+    description: 'Majestueus in haar web van goud',
+    image: '/images/posters/gouden-wielwebspin.png'
+  },
+  {
+    id: 'springende-spin',
+    title: 'Springende Spin',
+    subtitle: 'Salticidae',
+    description: 'Nieuwsgierige ogen vol verwondering',
+    image: '/images/posters/springende-spin.png'
+  },
+  {
+    id: 'zwarte-weduwe',
+    title: 'Zwarte Weduwe',
+    subtitle: 'Latrodectus mactans',
+    description: 'Elegante duisternis',
+    image: '/images/posters/zwarte-weduwe.png'
+  },
+  {
+    id: 'blauwe-vogelspinnen',
+    title: 'Blauwe Vogelspin',
+    subtitle: 'Chromatopelma cyaneopubescens',
+    description: 'Kobaltblauw kunstwerk der natuur',
+    image: '/images/posters/blauwe-vogelspinnen.png'
+  },
+  {
+    id: 'kruisspin',
+    title: 'Kruisspin',
+    subtitle: 'Araneus diadematus',
+    description: 'Architect van het perfecte web',
+    image: '/images/posters/kruisspin.png'
+  }
+];
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="min-h-[80vh] bg-web-pattern flex items-center">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-3xl">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-4">🕸️ Welkom bij</p>
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+          Spinnen<br />
+          <span class="text-purple-500">Posters</span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-8 max-w-xl">
+          Ontdek de fascinerende wereld van spinnen door prachtige, hoogwaardige posters. 
+          Van de majestueuze wielwebspin tot de nieuwsgierige springende spin.
+        </p>
+        <div class="flex gap-4">
+          <a href="/posters/" class="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 font-semibold transition-colors">
+            Bekijk Posters
+          </a>
+          <a href="/nieuws/" class="border border-gray-600 hover:border-white text-white px-8 py-4 font-semibold transition-colors">
+            Spinnen Nieuws
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posters -->
+  <section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Collectie</p>
+        <h2 class="text-4xl font-bold">Uitgelichte Posters</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posters.slice(0, 3).map(poster => (
+          <a href={`/posters/${poster.id}/`} class="poster-card group">
+            <div class="aspect-[2/3] bg-gray-800 overflow-hidden">
+              <img 
+                src={poster.image} 
+                alt={poster.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-4 bg-gray-800/50">
+              <h3 class="text-xl font-bold">{poster.title}</h3>
+              <p class="text-purple-400 text-sm italic">{poster.subtitle}</p>
+              <p class="text-gray-400 mt-2">{poster.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/posters/" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium">
+          Bekijk alle posters →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Over Ons</p>
+          <h2 class="text-4xl font-bold mb-6">Waarom Spinnen?</h2>
+          <p class="text-gray-400 text-lg leading-relaxed mb-6">
+            Spinnen zijn misschien wel de meest onderschatte kunstenaars van de natuur. 
+            Hun webben zijn architectonische meesterwerken, hun ogen zijn poorten naar 
+            een andere wereld, en hun diversiteit is adembenemend.
+          </p>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Wij brengen deze prachtige wezens tot leven in hoogwaardige posters die 
+            perfect zijn voor thuis, kantoor, of als cadeau voor de natuurliefhebber.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <p class="text-4xl font-black text-purple-500">45.000+</p>
+            <p class="text-gray-400 mt-2">Spinnensoorten</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <p class="text-4xl font-black text-purple-500">400M</p>
+            <p class="text-gray-400 mt-2">Jaar evolutie</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <p class="text-4xl font-black text-purple-500">8</p>
+            <p class="text-gray-400 mt-2">Poten altijd</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg text-center">
+            <p class="text-4xl font-black text-purple-500">∞</p>
+            <p class="text-gray-400 mt-2">Fascinatie</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

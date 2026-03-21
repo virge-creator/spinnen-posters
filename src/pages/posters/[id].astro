@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const posters = [
+    {
+      id: 'gouden-wielwebspin',
+      title: 'Gouden Wielwebspin',
+      subtitle: 'Nephila clavipes',
+      description: 'De gouden wielwebspin is beroemd om haar prachtige, goudkleurige zijde. Deze tropische spin weeft enkele van de grootste en sterkste webben in de spinnenwereld. Haar web kan zonlicht vangen en een gouden gloed afgeven, wat haar de bijnaam "goudenspin" heeft gegeven.',
+      image: '/images/posters/gouden-wielwebspin.png',
+      facts: ['Web kan tot 2 meter breed zijn', 'Gouden zijde wordt gebruikt in textiel', 'Vrouwtjes zijn 10x groter dan mannetjes', 'Leeft in tropische en subtropische gebieden'],
+      quote: 'Een web van goud, geweven in de ochtendzon'
+    },
+    {
+      id: 'springende-spin',
+      title: 'Springende Spin',
+      subtitle: 'Salticidae',
+      description: 'Met hun grote, expressieve ogen en nieuwsgierige aard zijn springende spinnen de charmantste van alle spinnen. Ze jagen actief en kunnen tot 50 keer hun eigen lichaamslengte springen. Hun vier grote voorste ogen geven hen een bijna menselijke uitstraling.',
+      image: '/images/posters/springende-spin.png',
+      facts: ['Beste zicht van alle spinnen', 'Meer dan 6.000 soorten', 'Kunnen kleuren zien', 'Dansen tijdens het paren'],
+      quote: 'Acht poten, acht ogen, eindeloze nieuwsgierigheid'
+    },
+    {
+      id: 'zwarte-weduwe',
+      title: 'Zwarte Weduwe',
+      subtitle: 'Latrodectus mactans',
+      description: 'De iconische zwarte weduwe met haar kenmerkende rode zandlopervormige markering. Ondanks haar reputatie is ze schuw en bijt alleen als ze zich bedreigd voelt. Haar elegante, glanzende zwarte lichaam maakt haar een van de meest herkenbare spinnen ter wereld.',
+      image: '/images/posters/zwarte-weduwe.png',
+      facts: ['Gif 15x sterker dan ratelslang', 'Mannetje wordt zelden opgegeten', 'Leeft tot 3 jaar', 'Bouwt onregelmatige webben'],
+      quote: 'Schoonheid in duisternis, kracht in stilte'
+    },
+    {
+      id: 'blauwe-vogelspinnen',
+      title: 'Blauwe Vogelspin',
+      subtitle: 'Chromatopelma cyaneopubescens',
+      description: 'De Greenbottle Blue tarantula uit Venezuela is een van de meest kleurrijke spinnen ter wereld, met een verbluffende combinatie van kobaltblauw, oranje en groen. Het blauw komt niet van pigment, maar van de manier waarop het licht weerkaatst op de haartjes.',
+      image: '/images/posters/blauwe-vogelspinnen.png',
+      facts: ['Komt alleen voor in Venezuela', 'Blauw komt door lichtbreking', 'Kan 15 jaar oud worden', 'Populair als huisdier'],
+      quote: 'Kobaltblauw in de woestijn, een juweel van de natuur'
+    },
+    {
+      id: 'kruisspin',
+      title: 'Kruisspin',
+      subtitle: 'Araneus diadematus',
+      description: 'De bekendste spin van Nederland en België, herkenbaar aan het witte kruis op haar achterlijf. Ze bouwt iedere dag een nieuw, perfect geometrisch web en eet het oude web op om de eiwitten te recyclen. In de herfst zijn hun webben overal te zien, bedekt met ochtenddauw.',
+      image: '/images/posters/kruisspin.png',
+      facts: ['Bouwt dagelijks nieuw web', 'Eet haar oude web op', 'Meest voorkomend in september', 'Web bestaat uit 1.500 verbindingen'],
+      quote: 'Architect van de ochtend, kunstenaar van de natuur'
+    }
+  ];
+  
+  return posters.map(poster => ({
+    params: { id: poster.id },
+    props: { poster }
+  }));
+}
+
+const { poster } = Astro.props;
+---
+
+<Layout title={poster.title} description={poster.description}>
+  <section class="py-20 bg-web-pattern min-h-screen">
+    <div class="max-w-6xl mx-auto px-6">
+      <a href="/posters/" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-8">
+        ← Terug naar posters
+      </a>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Poster Image -->
+        <div class="poster-card">
+          <img 
+            src={poster.image} 
+            alt={poster.title}
+            class="w-full rounded-lg shadow-2xl"
+          />
+        </div>
+        
+        <!-- Poster Info -->
+        <div class="flex flex-col justify-center">
+          <p class="text-purple-400 font-medium tracking-widest uppercase mb-2">Poster</p>
+          <h1 class="text-5xl font-black mb-2">{poster.title}</h1>
+          <p class="text-2xl text-purple-400 italic mb-6">{poster.subtitle}</p>
+          
+          <blockquote class="border-l-4 border-purple-500 pl-6 py-2 mb-8">
+            <p class="text-xl text-gray-300 italic">"{poster.quote}"</p>
+          </blockquote>
+          
+          <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            {poster.description}
+          </p>
+          
+          <div class="bg-gray-800/50 rounded-lg p-6 mb-8">
+            <h3 class="text-lg font-bold mb-4">Wist je dat...</h3>
+            <ul class="space-y-3">
+              {poster.facts.map(fact => (
+                <li class="flex items-start gap-3">
+                  <span class="text-purple-500 mt-1">🕷️</span>
+                  <span class="text-gray-300">{fact}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div class="flex gap-4">
+            <button class="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 font-semibold transition-colors flex items-center gap-2">
+              <span>Download Poster</span>
+              <span>↓</span>
+            </button>
+            <button class="border border-gray-600 hover:border-white text-white px-8 py-4 font-semibold transition-colors">
+              Delen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
